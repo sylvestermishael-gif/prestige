@@ -1,0 +1,6 @@
+{
+  "name": "Prestige Homes",
+  "description": "A cinematic, award-winning luxury real estate experience featuring premium villas, apartments, and penthouses in Nigeria.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

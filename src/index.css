@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-ivory: #F8F9FA;
+  --color-ocean: #3B82F6;
+  --color-emerald: #10B981;
+  --color-sand: #F4E7D3;
+  --color-sky-blue: #E0F2FE;
+  --color-coral: #FF7A59;
+  --color-navy: #1E3A8A;
+}
+
+/* Custom styling for smooth transitions and aesthetic flourishes */
+html, body {
+  font-family: var(--font-sans);
+  background-color: var(--color-ivory);
+  color: #1F2937;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar to match luxury design */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Custom animations and glow classes */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
+  }
+}
+
+.glow-ocean {
+  animation: pulseGlow 3s infinite;
+}
+
