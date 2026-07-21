@@ -49,6 +49,21 @@ export default function Footer() {
             Prestige Homes is Nigeria’s ultimate destination for ultra-luxury residential assets. Our firm combines vetted architectural surveying with secure capital investment structures.
           </p>
 
+          <div className="space-y-2 text-xs text-slate-300 font-light">
+            <div className="flex items-center gap-2">
+              <Mail className="w-3.5 h-3.5 text-blue-400" />
+              <a href="mailto:sylvestermishael@gmail.com" className="hover:text-white transition-colors font-mono">
+                sylvestermishael@gmail.com
+              </a>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-emerald-400 font-mono text-[10px] font-bold border border-emerald-500/20 px-1 rounded bg-emerald-500/5">WhatsApp</span>
+              <a href="https://wa.me/2348129382695" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 transition-all font-medium text-[11px] uppercase tracking-wider">
+                <span>Start Chat</span>
+              </a>
+            </div>
+          </div>
+
           {/* Social Icons row */}
           <div className="flex gap-4">
             <a href="#instagram" className="p-2.5 rounded-full bg-white/5 border border-white/10 text-slate-400 hover:text-white hover:bg-white/10 transition-colors">
@@ -87,6 +102,11 @@ export default function Footer() {
             <li><a href="#/catalog" className="hover:text-white transition-colors">Gated Smart Duplexes</a></li>
             <li><a href="#/catalog" className="hover:text-white transition-colors">Sovereign Mansions</a></li>
             <li><a href="#/catalog" className="hover:text-white transition-colors">Vetted Acreage</a></li>
+            <li className="pt-2 border-t border-white/5">
+              <a href="#/earth" className="text-blue-400 hover:text-white transition-colors flex items-center gap-1 font-medium">
+                <span>Return to Orbit</span>
+              </a>
+            </li>
           </ul>
         </div>
 

@@ -5,7 +5,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Compass, Sparkles, MapPin, Phone, ShieldCheck, AlignJustify, X, Sun, Moon } from 'lucide-react';
+import { Compass, Sparkles, MapPin, Phone, ShieldCheck, AlignJustify, X, Sun, Moon, Globe } from 'lucide-react';
 import { Property, SearchFilters, Booking } from './types';
 import { PROPERTIES } from './data';
 
@@ -204,6 +204,10 @@ export default function App() {
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash;
+      if (hash === '#/orbit' || hash === '#/earth') {
+        setHasEntered(false);
+        return;
+      }
       if (hash === '#/catalog') {
         setCurrentPage('catalog');
       } else if (hash === '#/map') {
@@ -251,7 +255,12 @@ export default function App() {
     <div className="min-h-screen bg-[#F8F9FA] dark:bg-slate-900 relative text-slate-800 dark:text-slate-100 font-sans antialiased selection:bg-blue-600 selection:text-white transition-colors duration-300">
       <AnimatePresence mode="wait">
         {!hasEntered ? (
-          <OpeningScene key="orbital-intro" onEnter={() => setHasEntered(true)} />
+          <OpeningScene key="orbital-intro" onEnter={() => {
+            setHasEntered(true);
+            if (window.location.hash === '#/orbit' || window.location.hash === '#/earth') {
+              window.location.hash = '#/';
+            }
+          }} />
         ) : (
           <motion.div
             key="prestige-homepage"
@@ -330,6 +339,15 @@ export default function App() {
 
                 {/* Action CTA (Desktop) */}
                 <div className="hidden md:flex items-center gap-4">
+                  {/* Return to Space Orbit */}
+                  <button
+                    onClick={() => setHasEntered(false)}
+                    className="p-2 rounded-full border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer text-slate-600 dark:text-slate-300"
+                    title="Return to Space Orbit"
+                  >
+                    <Globe className="w-4 h-4 text-blue-500 animate-pulse" />
+                  </button>
+
                   {/* Theme Toggle Button */}
                   <button
                     onClick={toggleTheme}
@@ -353,6 +371,13 @@ export default function App() {
 
                 {/* Mobile Menu Toggle Button */}
                 <div className="flex items-center gap-2 md:hidden">
+                  <button
+                    onClick={() => setHasEntered(false)}
+                    className="p-2 rounded-full border border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/85 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer text-slate-600 dark:text-slate-300"
+                    title="Return to Space Orbit"
+                  >
+                    <Globe className="w-4 h-4 text-blue-500" />
+                  </button>
                   <button
                     onClick={toggleTheme}
                     className="p-2 rounded-full border border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/85 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer text-slate-600 dark:text-slate-300"
@@ -384,6 +409,10 @@ export default function App() {
                       <a href="#/map" onClick={() => setMobileMenuOpen(false)} className={`py-1 ${currentPage === 'map' ? 'text-blue-600 font-semibold' : ''}`}>Map Radar</a>
                       <a href="#/promise" onClick={() => setMobileMenuOpen(false)} className={`py-1 ${currentPage === 'promise' ? 'text-blue-600 font-semibold' : ''}`}>The Promise</a>
                       <a href="#/reviews" onClick={() => setMobileMenuOpen(false)} className={`py-1 ${currentPage === 'reviews' ? 'text-blue-600 font-semibold' : ''}`}>Reviews</a>
+                      <a href="#/earth" onClick={() => setMobileMenuOpen(false)} className="py-1 text-blue-600 font-semibold flex items-center gap-1.5">
+                        <Globe className="w-4 h-4" />
+                        <span>Orbital View</span>
+                      </a>
                       
                       <hr className="border-slate-100 dark:border-slate-800" />
 

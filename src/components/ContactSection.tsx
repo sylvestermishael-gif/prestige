@@ -48,7 +48,7 @@ export default function ContactSection({ onScheduleInspectionClick, onSubmitDock
     const text = encodeURIComponent(
       `Hello Prestige Homes concierge team, I would like to schedule an inspection. My name is ${name || 'Valued Client'} and my budget index is approx ${budget === 'under-600' ? 'under ₦600M' : budget === '600-1200' ? '₦600M - ₦1.2B' : '₦1.2B+'}. Please coordinate our portfolio review.`
     );
-    return `https://wa.me/234800PRESTIGE?text=${text}`;
+    return `https://wa.me/2348129382695?text=${text}`;
   };
 
   return (
@@ -188,9 +188,9 @@ export default function ContactSection({ onScheduleInspectionClick, onSubmitDock
                     <PhoneCall className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="block text-[10px] font-mono uppercase tracking-wider text-slate-400 dark:text-slate-500">BOARD OFFICE PHONE</span>
-                    <a href="tel:+234800PRESTIGE" className="text-slate-800 dark:text-slate-200 font-semibold font-display text-sm hover:text-blue-600 transition-colors">
-                      +234 800 PRESTIGE
+                    <span className="block text-[10px] font-mono uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-1">BOARD OFFICE PHONE</span>
+                    <a href="tel:+2348129382695" className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 hover:bg-blue-500/20 text-blue-600 dark:text-blue-400 border border-blue-500/20 transition-all font-medium text-[11px] uppercase tracking-wider">
+                      <span>Call Concierge</span>
                     </a>
                   </div>
                 </div>
@@ -201,8 +201,8 @@ export default function ContactSection({ onScheduleInspectionClick, onSubmitDock
                   </div>
                   <div>
                     <span className="block text-[10px] font-mono uppercase tracking-wider text-slate-400 dark:text-slate-500">ENQUIRIES INTAKE</span>
-                    <a href="mailto:concierge@prestigehomes.com" className="text-slate-800 dark:text-slate-200 font-semibold font-display text-sm hover:text-emerald-600 transition-colors">
-                      concierge@prestigehomes.com
+                    <a href="mailto:sylvestermishael@gmail.com" className="text-slate-800 dark:text-slate-200 font-semibold font-display text-sm hover:text-emerald-600 transition-colors">
+                      sylvestermishael@gmail.com
                     </a>
                   </div>
                 </div>
